@@ -1,15 +1,23 @@
-## Banking application sample
+# Banking application sample
 
-### Usage
+## Usage
 
 `python3 main.py`
 
-### `main.py` Overview
+## `main.py` Overview
 
 The `main.py` file serves as the entry point to the Banking System application, orchestrating the overall flow and interactions between different layers of the application in accordance with Clean Architecture principles. Its primary responsibilities include initializing the application's environment, setting up dependencies, and providing a user interface for interaction with the system.
 
-#### Key Features
+## Demonstration of Core Functionalities
 
-- **Initialization**: `main.py` initializes the application by setting up the necessary configurations, including environment variables, application settings, and logging. This ensures that the application has all the required context and settings to operate correctly.
+### Creating Customer and Account
 
-- **Dependency Injection**: It establishes the dependencies between the application's layers. This includes instantiating the infrastructure components (e.g., database connections, repository implementations) and injecting these instances into the application services and use cases. This approach decouples the application's core logic from specific implementations, enhancing modularity and testability.
+The script demonstrates creating a new customer and associated account with `create_account` method from the `AccountManagementUseCase`. It doesn't explicitly show customer creation but implies it's handled within the `create_account` method. The account creation process assigns a unique identifier (customer ID) and account number to the new account, simulating the onboarding of a new customer.
+
+### Executing Transactions
+
+The script then demonstrates making transactions on the newly created account. It deposits an amount of 100 units into the account and then withdraws 50 units. The `TransactionUseCase` handles these operations, updating the account's balance accordingly. Error handling for insufficient balance is demonstrated using a try-except block, catching `InsufficientBalanceError` if a withdrawal attempt exceeds the account's balance.
+
+### Generating Account Statement
+
+Finally, the script generates an account statement using the `AccountStatementUseCase`. This statement likely includes the account's transaction history and current balance, although the specific format of the statement isn't detailed in the script.
