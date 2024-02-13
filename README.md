@@ -1,3 +1,9 @@
+## Banking application sample
+
+### Usage
+
+`python3 main.py`
+
 ### `main.py` Overview
 
 The `main.py` file serves as the entry point to the Banking System application, orchestrating the overall flow and interactions between different layers of the application in accordance with Clean Architecture principles. Its primary responsibilities include initializing the application's environment, setting up dependencies, and providing a user interface for interaction with the system.
