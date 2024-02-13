@@ -4,7 +4,6 @@ from applications.use_cases.account_management import AccountManagementUseCase
 from applications.use_cases.transaction import TransactionUseCase
 from applications.use_cases.account_statement import AccountStatementUseCase
 from domains.exceptions import InsufficientBalanceError
-import uuid
 
 
 if __name__ == '__main__':
