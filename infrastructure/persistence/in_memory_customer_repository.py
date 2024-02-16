@@ -4,12 +4,13 @@ from domains.exceptions import CustomerNotFoundError
 from typing import Dict, Optional
 import uuid
 
+
 class InMemoryCustomerRepository(CustomerRepository):
     def __init__(self) -> None:
         self.customers: Dict[str, Customer] = {}
 
     def save(self, customer: Customer) -> None:
-        self.customers[customer.customer_id] = customer
+        self.customers[customer.id] = customer
 
     def find_by_id(self, customer_id: str) -> Optional[Customer]:
         customer = self.customers.get(customer_id)

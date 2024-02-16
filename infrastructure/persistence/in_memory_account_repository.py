@@ -4,12 +4,13 @@ from domains.exceptions import AccountNotFoundError
 from typing import Dict, Optional
 import uuid
 
+
 class InMemoryAccountRepository(AccountRepository):
     def __init__(self) -> None:
         self.accounts: Dict[str, Account] = {}
 
     def save(self, account: Account) -> None:
-        self.accounts[account.account_id] = account
+        self.accounts[account.id] = account
 
     def find_by_id(self, account_id: str) -> Optional[Account]:
         account = self.accounts.get(account_id)
